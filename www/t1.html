@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>UploadiFive Test</title>
+<script src="../www/jquery.js" type="text/javascript"></script>
+<script src="../www/jquery.uploadify.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../www/uploadify.css">
+<style type="text/css">
+body {
+	font: 13px Arial, Helvetica, Sans-serif;
+}
+</style>
+</head>
+
+<body>
+	<h1>测试</h1>
+	<form>
+		<div id="queue"></div>
+		<input id="file_upload" name="file_upload" type="file" multiple="true">
+	</form>
+<script>
+	$(document).ready(function(){
+    $("#file_upload").uploadify({
+    //属性
+    	'auto': true,//设置auto为true，当文件被添加至上传队列时，将会自动上传。
+    	'buttonClass':'myapp',//为上传按钮添加类名。
+    	'buttonCursor':'hand',//鼠标经过上传按钮时，鼠标的形状。可选值为hand和arrow
+    	'buttonImage':'1.ico',//定义“浏览”按钮背景图像的路径。给按钮设置背景图像的代码最好写在CSS文件中。
+    	'buttonText':'按钮',//定义显示在默认按钮上的文本
+    	'checkExisting':'t1',//定义检查目标文件夹中是否存在同名文件的脚本文件路径。
+    	'debug':true,//当其值为true时，开启SWFUpload调试模式。
+    	'fileObjName':'matisha',//定义上传数据处理文件中接收数据使用的文件对象名。
+    	'fileSizeLimit':'2MB',//上传文件大小限制。
+    	'fileTypeDesc':'*.jpg;*.jpge;*.png;*.gif',//可选择的文件类型的描述。此字符串出现在浏览文件对话框的文件类型下拉菜单中。
+    	'fileTypeExts':'*.jpg;*.jpge;*.png;*.gif',//定义允许上传的文件后缀。
+    	'formData':'',//定义在文件上传时需要一同提交的其他数据对象。
+    	'height':30,//上传按钮的高度（单位：像素）。
+    	'itemTemplate':'',//itemTemplate选项允许你为每一个添加到队列中选项设定一个不同HTML模板。
+    	'method':'get',//上传文件的提交方法，取值'post'或'get'。
+    	'multi':true,//设置值为false时，一次只能选中一个文件。
+    	'overrideEvents':'',//该项定义了一组默认脚本中你不想执行的事件名称。
+    	'preventCaching':'',//如果设置为真，一个随机的值添加到SWF文件的URL，因此它不会缓存。
+    	'progressData':'speed',//设置显示在上传进度条中的数据类型，可选项时百分比（percentage）或速度（speed）。
+    	'queueID':'',//queueID选项允许你设置一个拥有唯一ID的DOM元素来作为显示上传队列的容器。
+    	'queueSizeLimit':2,//上传队列中一次可容纳的最大条数。
+    	'removeCompleted':true,//不设置该选项或者将其设置为false，将使上传队列中的项目始终显示于队列中，直到点击了关闭按钮或者队列被清空。
+    	'removeTimeout':20,//设置上传完成后从上传队列中移除的时间（单位：秒）
+    	'requeueErrors':true,//设置为真时，上传队列重置或上传多次重试时，返回错误信息。
+    	'successTimeout':20,//表示uploadify的成功等待时间（单位：秒，默认30秒）。
+    	'swf':'uploadify.swf',//定义uploadify.swf的路径。
+    	'uploader':'../t1/',//定义服务器端上传数据处理脚本文件uploadify.swf的路径。
+    	'uploadLimit':2,//定义允许的最大上传数量。
+    	'width':100,//定义浏览按钮的宽度。
+    //事件
+    	'onCancel':function(){//设置onCancel选项，在文件上传被取消时，将允许运行一个自定义函数。
+
+    	},
+    	'onClearQueue':function(){//设置onClearQueue选项，上传队列清空时，将允许运行一个自定义函数
+
+    	},
+    	'onDestroy':function(){//销毁Uploadify实例（调用destroy方法）时触发该事件
+
+    	},
+    	'onDialogClose':function(){//当浏览文件对话框关闭时触发该事件。
+
+    	},
+    	'onDialogOpen':function(){//在浏览文件对话框被打开前一瞬触发该事件。
+
+    	},
+    	'onDisable':function(){//调用disable方法禁用Uploadify实例时触发该事件
+
+    	},
+    	'onEnable':function(){//调用disable方法启用Uploadify实例时触发该事件。
+
+    	},
+    	'onFallback':function(){//浏览器检测不到兼容版本的Flash时触发该事件。
+
+    	},
+    	'onInit':function(){//调用Uploadify初始化结束时触发该事件。
+
+
+    	},
+    	'onQueueComplete':function(){//队列中的所有文件被处理完成时触发该事件
+
+    	},
+    	'onSelect':function(){//每添加一个文件至上传队列时触发该事件
+
+    	},
+    	'onSelectError':function(){//选择文件返回错误时触发该事件。每一个文件返回错误都会触发该事件。
+
+
+    	},
+    	onSWFReady:function(){//当flash按钮载入完毕时触发该事件。
+
+    	},
+    	'onUploadComplete':function(){//每一个文件上传完成都会触发该事件，不管是上传成功还是上传失败。
+
+    	},
+    	'onUploadError':function(){//上传失败时触发该事件。
+
+    	},
+    	'onUploadProgress':function(){//上传进度更新时触发该事件。
+
+    	},
+    	'onUploadStart':function(){//在开始上传之前的瞬间会触发该事件。
+
+    	},
+    	'onUploadSuccess':function(){//每一个文件上传成功时触发该事件。
+
+    	}
+    });
+});  
+	//方法	
+		$('#file_upload').uploadify('cancel');//取消上传对象。
+		$('#file_upload').uploadify('destroy');//销毁Uploadify实例，并返回原文件域。
+		$('#file_upload').uploadify('disable',true);//控制浏览按钮是否可用。
+		$('#file_upload').uploadify('settings','buttonText','BROWSE');//返回或更新一个Uploadify实例的值。
+		$('#file_upload').uploadify('stop');//停止当前上传。
+		$('#file_upload').uploadify('upload','*');//上传指定文件或队列中的所有文件。
+</script>
+</body>
+</html>
